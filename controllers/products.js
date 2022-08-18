@@ -1,4 +1,5 @@
 const Product = require("../models/product");
+// const {parse, stringify, toJSON, fromJSON} = require('flatted');
 
 const getAllproductsStatic = async (req, res) => {
   const product = await Product.find({});
@@ -8,6 +9,7 @@ const getAllproductsStatic = async (req, res) => {
 const getAllproducts = async (req, res) => {
   const { featured, company, name, sort } = req.query;
   const queryObject = {};
+
   if (featured) {
     queryObject.featured = featured === "true" ? true : false;
   }
@@ -18,16 +20,20 @@ const getAllproducts = async (req, res) => {
     queryObject.name = { $regex: name, $options: "i" };
   }
   // console.log(queryObject);
+  
   let result = Product.find(queryObject);
+  //sort
   if (sort) {
-   let sortlist = sort.split(',').join(' ');
+   const sortlist = sort.split(',').join(' ');
    result = result.sort(sortlist);
   }
   else{
     result = result.sort('createdAt');
   }
-  const products = result;
-  res.status(200).json({ products, nbHits: products.length });
+
+  // console.log(result);
+  const products = await result;
+  res.status(200).json({ products,nHbits: products.length });
 };
 
 module.exports = {
