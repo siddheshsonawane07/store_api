@@ -30,10 +30,19 @@ const getAllproducts = async (req, res) => {
     result = result.sort("createdAt");
   }
 
+//select
   if (fields) {
     const fieldslist = fields.split(",").join(" ");
     result = result.select(fieldslist);
   }
+
+  //page number
+  const page = Number(req.query.page) || 1
+  const limit = Number(req.query.limit) || 10
+  const skip = (page-1)*limit
+
+  result = result.skip(skip).limit(limit)
+
 
   // console.log(result);
   const products = await result;
