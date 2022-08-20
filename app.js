@@ -10,13 +10,21 @@ const productsRouter = require("./routes/products");
 const notFoundMiddleware = require("./middleware/not-found");
 const errorMiddleware = require("./middleware/error-handler");
 
+const handlebars = require("express-handlebars");
+
+app.set("view engine", "handlebars");
+
+app.engine('handlebars',handlebars({
+  layoutsDir: `$(__dirname)/views/layouts`
+}))
+
 app.use(express.json());
 app.use(express.static("public"));
 
 //routes
 
 app.get("/", (req, res) => {
-  res.send('index');
+  res.render('main',{layout:'index'})
 });
 
 app.use("/api/v1/products", productsRouter);
