@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index Page</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Products Store API</h1>
-    <a href = "/api/v1/products"> All products </a>
-</body>
+    <a href="/api/v1/products"> All products </a>
+    <p>Please select your option for searching and sorting the products</p>
+
+    <form>
+      <div>
+        <input type="radio" id="featured1" name="contact" value="True" />
+        <label for="featured1">True</label>
+
+        <input type="radio" id="featured2" name="contact" value="False" />
+        <label for="featured2">False</label>
+      </div>
+      <div>
+        <br />
+        <br />
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
 </html>
