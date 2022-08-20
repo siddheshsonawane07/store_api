@@ -8,22 +8,25 @@
   </head>
   <body>
     <h1>Products Store API</h1>
-    <a href="/api/v1/products"> All products </a>
-    <p>Please select your option for searching and sorting the products</p>
+    <a href="/api/v1/products">Display all products </a>
 
-    <form>
-      <div>
-        <input type="radio" id="featured1" name="contact" value="True" />
-        <label for="featured1">True</label>
+    <h2>Sorting done on 'featured' property of product</h2>
 
-        <input type="radio" id="featured2" name="contact" value="False" />
-        <label for="featured2">False</label>
-      </div>
-      <div>
-        <br />
-        <br />
-        <button type="submit">Submit</button>
-      </div>
-    </form>
+    <a href="/api/v1/products?featured=true">True</a>
+    <br />
+    <br />
+    <a href="/api/v1/products?featured=false">False</a>
+
+    <br />
+    <h2>Sorting done on 'company' property of product</h2>
+    <a href="/api/v1/products?company=ikea">ikea</a>
+    <br />
+    <br />
+    <a href="/api/v1/products?company=marcos">marcos</a>
+    <br />
+    <br />
+    <a href="/api/v1/products?company=caressa">caressa</a>
+    <br />
+    <br />
   </body>
 </html>
