@@ -10,15 +10,14 @@
     <h1>Products Store API</h1>
     <a href="/api/v1/products">Display all products </a>
 
-    <h2>Sorting done on 'featured' property of product</h2>
+    <h3>Sorting done on 'featured' property of product</h3>
 
     <a href="/api/v1/products?featured=true">True</a>
     <br />
     <br />
     <a href="/api/v1/products?featured=false">False</a>
-
     <br />
-    <h2>Sorting done on 'company' property of product</h2>
+    <h3>Sorting done on 'company' property of product</h3>
     <a href="/api/v1/products?company=ikea">ikea</a>
     <br />
     <br />
@@ -26,6 +25,25 @@
     <br />
     <br />
     <a href="/api/v1/products?company=caressa">caressa</a>
+    <br />
+    <br />
+    <h3>Sorting done on 'name' property of product. Here regex is enabled</h3>
+    <a href="/api/v1/products?name=a">a</a>
+    <br />
+    <br />
+    <a href="/api/v1/products?name=wooden">wooden</a>
+    <br />
+    <br />
+    <h3>
+      Sorting done on 'price' & 'rating' property of product. Here numeric
+      filters are enabled
+    </h3>
+    <a href="/api/v1/products?numericFilters=price<40">price less than 40</a>
+    <br />
+    <br />
+    <a href="/api/v1/products?numericFilters=price<40,rating>=4.5"
+      >price less than 40 & rating greater or equal to 405</a
+    >
     <br />
     <br />
   </body>
