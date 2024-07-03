@@ -1,5 +1,4 @@
 const Product = require("../models/product");
-// const {parse, stringify, toJSON, fromJSON} = require('flatted');
 
 const getAllproductsStatic = async (req, res) => {
   const product = await Product.find({});

@@ -7,25 +7,18 @@ const app = express();
 const connectDB = require("./db/connect");
 const productsRouter = require("./routes/products");
 
-const notFoundMiddleware = require("./middleware/not-found");
-const errorMiddleware = require("./middleware/error-handler");
-
 app.use(express.json());
 app.use(express.static("public"));
 
 //routes
 
 app.get("/", (req, res) => {
-  res.send('index')
+  res.send("index");
 });
 
 app.use("/api/v1/products", productsRouter);
 
 //product route
-
-app.use(notFoundMiddleware);
-app.use(errorMiddleware);
-
 const port = process.env.PORT || 3000;
 
 const start = async () => {
