@@ -24,7 +24,7 @@ const ProductList = () => {
       }
 
       const response = await axios.get(
-        "http://localhost:3000/api/v1/products",
+        "https://store-api-1q3l.onrender.com/api/v1/products",
         { params: apiQuery }
       );
       setProducts(response.data.products || []);
