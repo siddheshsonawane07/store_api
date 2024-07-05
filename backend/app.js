@@ -2,12 +2,14 @@ require("dotenv").config();
 require("express-async-errors");
 
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
 const connectDB = require("./db/connect");
 const productsRouter = require("./routes/products");
 
 app.use(express.json());
+app.use(cors());
 app.use(express.static("public"));
 
 //routes
