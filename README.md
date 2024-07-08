@@ -1,4 +1,4 @@
-# Task Manager App
+# Store API
 
 This project implements an e-commerce Store API with a frontend built using React and a backend created with Express.js, MongoDB, and Node.js.
 
