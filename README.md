@@ -45,7 +45,7 @@ Note: Change the apiBaseUrl to "http://localhost:3000/api/v1/products" at line n
 
 **Frontend**: Deployed using Netlify. "https://sidstoreapi.netlify.app/"
 
-**Backend**: Deployed using Render.com.  "https://store-api-1q3l.onrender.com"
+**Backend**: Deployed using Render.com.  "https://store-api-1q3l.onrender.com/api/v1/products"
 
 
 
